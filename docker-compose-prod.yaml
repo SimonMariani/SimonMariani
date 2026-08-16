@@ -2,6 +2,7 @@ services:
   # The frontend application
   personal-website-frontend:
     container_name: personal-website-frontend
+    restart: unless-stopped
     build:
       context: ./frontend
       target: production
@@ -22,6 +23,7 @@ services:
   personal-website-api:
     image: personal-website-api
     container_name: personal-website-api
+    restart: unless-stopped
     build:
       context: ./api/
       target: production
@@ -46,6 +48,7 @@ services:
   postgres:
     container_name: personal-website-db
     image: pgvector/pgvector:pg17
+    restart: unless-stopped
     env_file:
       - ./.env
     volumes:
@@ -56,7 +59,6 @@ services:
       timeout: 5s
       retries: 5
       start_period: 10s
-    restart: unless-stopped
     networks:
       - default
 
