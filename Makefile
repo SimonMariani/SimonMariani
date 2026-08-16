@@ -5,7 +5,7 @@ else
 SHELL := /bin/bash
 endif
 
-REMOTE = root@142.93.104.164
+REMOTE = root@165.22.67.249
 REMOTE_DIR = /home/applications/personal-website
 
 ############################
